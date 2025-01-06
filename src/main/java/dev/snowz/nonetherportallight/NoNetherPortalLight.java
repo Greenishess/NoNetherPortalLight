@@ -6,6 +6,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.world.PortalCreateEvent;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.ChatColor;
+
 
 public final class NoNetherPortalLight extends JavaPlugin implements Listener {
 
@@ -19,7 +21,7 @@ public final class NoNetherPortalLight extends JavaPlugin implements Listener {
         if (event.getEntity() instanceof Player player) {
             if (player.getWorld().getEnvironment().equals(World.Environment.NETHER)) {
                 event.setCancelled(true);
-                player.sendMessage("You cannot light portals in the nether!");
+                player.sendMessage(ChatColor.RED + "You cannot light portals in the nether!");
             }
         }
     }
